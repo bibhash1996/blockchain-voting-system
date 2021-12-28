@@ -47,6 +47,11 @@ contract Voting {
         _;
     }
 
+    function updateOwnership(address newOwner) public onlyOwner returns (bool) {
+        owner = newOwner;
+        return true;
+    }
+
     //String lower case
     function _toLower(string memory str) internal pure returns (string memory) {
         bytes memory bStr = bytes(str);
